@@ -19,7 +19,7 @@ RUN yarn --pure-lockfile && \
 FROM node:${NODE_VERSION}-alpine
 # See : https://github.com/theia-ide/theia-apps/issues/34
 RUN addgroup theia && \
-    adduser -G theia -s /bin/sh -D theia;
+    adduser -u 105 -G theia -s /bin/sh -D theia;
 RUN chmod g+rw /home && \
     mkdir -p /home/project && \
     chown -R theia:theia /home/theia && \
